@@ -8,7 +8,6 @@ const router = require("./routes/index")(app, Message)
 const ObjectId = require('mongodb').ObjectID
 
 app.use(express.static('dist'));
-app.get('/api/getUsername', (req, res) => res.send({ username: os.userInfo().username }));
 http.listen(8080, function(){
   console.log('listening on *:8080');
 });
