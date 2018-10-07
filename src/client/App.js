@@ -24,7 +24,12 @@ export default class App extends Component {
   sendMsg = (evt) => {
     const form = document.getElementById('form')
     const msg = document.getElementById('m')
-    this.state.socket.emit('chat message', msg.value);
+    
+    this.state.socket.emit('chat message', {
+      content: msg.value,
+      author: "Joel Mun",
+      published_date: new Date()
+    });
     msg.value = ""
     evt.preventDefault()
   }
